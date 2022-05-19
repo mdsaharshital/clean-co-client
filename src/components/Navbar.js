@@ -2,11 +2,14 @@ import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { NavLink, Link } from "react-router-dom";
+import useAdmin from "../hooks/useAdmin";
 import auth from "./../firebase.init";
 
 const Navbar = ({ children }) => {
   //
   const [user] = useAuthState(auth);
+  //
+  const [admin] = useAdmin();
   const navBarMenu = (
     <>
       <li>
@@ -14,6 +17,13 @@ const Navbar = ({ children }) => {
           Home
         </NavLink>
       </li>
+      {admin && (
+        <li>
+          <NavLink className="rounded-lg" to="/dashboard">
+            Dashboard
+          </NavLink>
+        </li>
+      )}
       <li>
         <NavLink className="rounded-lg" to="/about">
           About
