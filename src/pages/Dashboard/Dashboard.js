@@ -1,23 +1,8 @@
 import React from "react";
+import DashboardSidebar from "../../components/DashboardSidebar";
 
 const Dashboard = () => {
-  return (
-    <div>
-      <h1>This is dashboard</h1>
-      <h1>This is dashboard</h1>
-      <h1>This is dashboard</h1>
-      <h1>This is dashboard</h1>
-      <h1>This is dashboard</h1>
-      <h1>This is dashboard</h1>
-      <h1>This is dashboard</h1>
-      <h1>This is dashboard</h1>
-      <h1>This is dashboard</h1>
-      <h1>This is dashboard</h1>
-      <h1>This is dashboard</h1>
-      <h1>This is dashboard</h1>
-      <h1>This is dashboard</h1>
-    </div>
-  );
+  return <DashboardSidebar></DashboardSidebar>;
 };
 
 export default Dashboard;

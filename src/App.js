@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { privateRoute, publicRoute } from "./routes/Routes";
+import { adminNestedRoute, privateRoute, publicRoute } from "./routes/Routes";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -32,7 +32,11 @@ function App() {
           </Route>
           {/* // admins here only */}
           <Route element={<AdminRoute />}>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />}>
+              {adminNestedRoute.map(({ path, Component }, index) => (
+                <Route key={index} path={path} element={<Component />}></Route>
+              ))}
+            </Route>
           </Route>
         </Routes>
       </Navbar>
