@@ -4,8 +4,8 @@ import heroImg from "../../assets/images/bucketgirl 1.png";
 const Landing = () => {
   return (
     <>
-      <div class="hero h-screen lg:h-[60vh] bg-accent mt-16">
-        <div class="hero-content flex-col lg:flex-row">
+      <div className="hero h-screen lg:h-[60vh] bg-accent mt-16">
+        <div className="hero-content flex-col lg:flex-row">
           <div className="lg:w-1/2">
             <small
               data-aos="fade-right"
@@ -18,7 +18,7 @@ const Landing = () => {
               data-aos="fade-right"
               data-aos-delay="400"
               data-aos-duration="900"
-              class="md:text-4xl text-3xl font-bold "
+              className="md:text-4xl text-3xl font-bold "
             >
               Professional Cleaning Service
             </h1>
@@ -26,7 +26,7 @@ const Landing = () => {
               data-aos="fade-right"
               data-aos-delay="600"
               data-aos-duration="800"
-              class="py-6 max-w-xl"
+              className="py-6 max-w-xl"
             >
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
@@ -35,13 +35,18 @@ const Landing = () => {
             <button
               data-aos="zoom-in"
               data-aos-delay="1200"
-              class="btn btn-primary "
+              className="btn btn-primary "
             >
               Get Started
             </button>
           </div>
-          <div className="h-[60vh] shrink-0">
-            <img src={heroImg} class="hero-img md:h-[60vh]" alt="" />
+          <div
+            data-aos="fade-left"
+            data-aos-delay="700"
+            data-aos-duration="1200"
+            className="h-[60vh] shrink-0"
+          >
+            <img src={heroImg} className="hero-img md:h-[60vh]" alt="" />
           </div>
         </div>
       </div>
@@ -51,42 +56,42 @@ const Landing = () => {
           <input
             type="text"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs m-3"
+            className="input input-bordered w-full max-w-xs m-3"
           />
           <input
             type="text"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs m-3"
+            className="input input-bordered w-full max-w-xs m-3"
           />
           <input
             type="text"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs m-3"
+            className="input input-bordered w-full max-w-xs m-3"
           />
           <input
             type="text"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs m-3"
+            className="input input-bordered w-full max-w-xs m-3"
           />
           <input
             type="text"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs m-3"
+            className="input input-bordered w-full max-w-xs m-3"
           />
           <input
             type="text"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs m-3"
+            className="input input-bordered w-full max-w-xs m-3"
           />
           <input
             type="text"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs m-3"
+            className="input input-bordered w-full max-w-xs m-3"
           />
           <input
             type="text"
             placeholder="Type here"
-            class="input input-bordered w-full max-w-xs m-3"
+            className="input input-bordered w-full max-w-xs m-3"
           />
         </div>
         <button className="btn btn-primary mt-3">REQUEST A QOUTE</button>

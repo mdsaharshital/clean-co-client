@@ -1,7 +1,12 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { NavLink, Link } from "react-router-dom";
+import auth from "./../firebase.init";
 
 const Navbar = ({ children }) => {
+  //
+  const [user] = useAuthState(auth);
   const navBarMenu = (
     <>
       <li>
@@ -24,10 +29,20 @@ const Navbar = ({ children }) => {
           Contact
         </NavLink>
       </li>
-      <li>
-        <NavLink className="rounded-lg" to="/login">
-          Login
-        </NavLink>
+      <li
+        onClick={() => {
+          signOut(auth);
+        }}
+      >
+        {user ? (
+          <Link className="rounded-lg " to="/">
+            Log Out
+          </Link>
+        ) : (
+          <NavLink className="rounded-lg " to="/login">
+            Login
+          </NavLink>
+        )}
       </li>
       <li className="dropdown dropdown-hover dropdown-end">
         <label
@@ -48,7 +63,7 @@ const Navbar = ({ children }) => {
           </li>
         </ul>
       </li>
-      <label class="swap swap-rotate ml-2">
+      <label className="swap swap-rotate ml-2">
         <input
           type="checkbox"
           data-toggle-theme="dark,light"
@@ -56,7 +71,7 @@ const Navbar = ({ children }) => {
         />
 
         <svg
-          class="swap-on fill-current w-8 h-8"
+          className="swap-on fill-current w-8 h-8"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -64,7 +79,7 @@ const Navbar = ({ children }) => {
         </svg>
 
         <svg
-          class="swap-off fill-current w-8 h-8"
+          className="swap-off fill-current w-8 h-8"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
         >
@@ -106,7 +121,7 @@ const Navbar = ({ children }) => {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-        <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
+        <ul className="menu pt-8 p-4 overflow-y-auto w-80 bg-base-100 gap-3">
           {navBarMenu}
         </ul>
       </div>
