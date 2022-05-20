@@ -5,6 +5,8 @@ import { adminNestedRoute, privateRoute, publicRoute } from "./routes/Routes";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import RequireAuth from "./routes/RequireAuth";
 import AdminRoute from "./routes/AdminRoute";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -39,6 +41,7 @@ function App() {
             </Route>
           </Route>
         </Routes>
+        <ToastContainer />
       </Navbar>
     </div>
   );
